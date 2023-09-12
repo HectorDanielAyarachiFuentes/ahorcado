@@ -9,10 +9,14 @@ body {
                       linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
-/* Contenedor de palabras */
+/* Contenedor de palabras (id="word-container") */
 #word-container {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor de adivinanzas */
@@ -39,15 +43,6 @@ body {
     margin: 10px;
 }
 
-/* Botón de adivinar */
-#guess-button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 /* Estilos para las letras del abecedario */
 .alphabet-letter {
     display: inline-block;
@@ -69,24 +64,9 @@ body {
 @media (max-width: 768px) {
     #word-container {
         font-size: 24px;
-    }
-
-    #guesses-container {
-        font-size: 22px;
-    }
-
-    #alphabet-container {
-        font-size: 20px;
-    }
-
-    #message {
-        font-size: 20px;
-    }
-
-    .alphabet-letter {
-        font-size: 32px; /* Aumenta el tamaño de fuente para las letras en tablet */
-        margin: 15px; /* Aumenta el margen en tablet */
-        padding: 15px; /* Aumenta el espacio interno en tablet */
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
     }
 }
 
@@ -94,40 +74,85 @@ body {
 @media (max-width: 480px) {
     #word-container {
         font-size: 20px;
+        margin-bottom: 15px;
+        padding: 5px;
+        border-radius: 3px;
+    }
+}
+
+/* Media Queries para pantalla pequeña (max-width: 320px) */
+@media (max-width: 320px) {
+    body {
+        background-image: none;
+    }
+
+    #word-container {
+        font-size: 18px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 3px;
+        box-shadow: none;
+        background-color: transparent;
     }
 
     #guesses-container {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     #alphabet-container {
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 10px;
     }
 
     #message {
         font-size: 16px;
     }
 
+    #letter-input {
+        padding: 3px;
+        margin: 5px;
+    }
+
     .alphabet-letter {
-        font-size: 28px; /* Aumenta el tamaño de fuente para las letras en celular */
-        margin: 12px; /* Aumenta el margen en celular */
-        padding: 12px; /* Aumenta el espacio interno en celular */
+        font-size: 18px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .alphabet-letter:hover {
+        background-color: transparent;
+        color: inherit;
     }
 }
 
-/* Estilo para el botón de reinicio */
+/* Estilos para el botón "Restart" (id="restart-button") */
 #restart-button {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Color de fondo verde */
+    background-color: #4CAF50; /* Color verde hermoso */
     color: white;
+    font-size: 20px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease; /* Agregar una transición suave al color de fondo */
+    transition: background-color 0.3s; /* Transición suave de color */
 }
 
-/* Estilo hover para el botón de reinicio */
 #restart-button:hover {
-    background-color: #45a049; /* Color de fondo verde más oscuro al pasar el mouse */
+    background-color: #45a049; /* Cambia de color en hover */
+}
+
+/* Estilos para el botón "Guess" (id="guess-button") */
+#guess-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave de color */
+}
+
+#guess-button:hover {
+    background-color: #007bff; /* Cambia de color en hover */
+    color: white;
 }

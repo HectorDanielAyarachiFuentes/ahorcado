@@ -164,7 +164,12 @@ function mostrarMensajeFinal() {
         document.body.appendChild(mensajeFinal);
     }, 1000);
 }
-
+// Agrega un evento de clic al botón
+happyButton.addEventListener("click", () => {
+    // Reproduce el audio
+    audioPlayer.play();
+  });
+  
 
 // Inicialización del juego
 actualizarPalabraOculta();

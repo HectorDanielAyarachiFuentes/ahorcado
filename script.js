@@ -8,7 +8,6 @@ let juegoTerminado = false;
 const wordContainer = document.getElementById("word-container");
 const guessesContainer = document.getElementById("guesses-container");
 const message = document.getElementById("message");
-const letterInput = document.getElementById("letter-input");
 const guessButton = document.getElementById("guess-button");
 const restartButton = document.getElementById("restart-button");
 
@@ -59,18 +58,13 @@ function actualizarPalabraOculta() {
 }
 
 // Función para manejar los intentos del jugador y verificar la victoria
-function manejarIntento() {
+function manejarIntento(letra) {
     if (juegoTerminado) {
         message.textContent = "El juego ha terminado. Pulsa Reiniciar Juego para jugar de nuevo.";
         return;
     }
 
-    const letra = letterInput.value.toLowerCase();
-
-    if (letra.length !== 1 || !/^[a-z]$/.test(letra)) {
-        message.textContent = "Ingresa una letra válida.";
-        return;
-    }
+    letra = letra.toLowerCase();
 
     if (letrasAdivinadas.includes(letra)) {
         message.textContent = "Ya has adivinado esa letra.";
@@ -107,12 +101,9 @@ function manejarIntento() {
     }
 
     guessesContainer.textContent = `Letras adivinadas: ${letrasAdivinadas.join(", ")}`;
-
-    letterInput.value = "";
-    letterInput.focus();
 }
 
-guessButton.addEventListener("click", manejarIntento);
+// ...
 
 // Generar el abecedario
 const abecedario = 'abcdefghijklmnopqrstuvwxyz';
@@ -124,11 +115,12 @@ for (let letra of abecedario) {
     letterButton.textContent = letra;
     letterButton.classList.add("alphabet-letter");
     letterButton.addEventListener("click", () => {
-        letterInput.value = letra;
-        manejarIntento();
+        manejarIntento(letra); // Llama a manejarIntento con la letra correspondiente
     });
     alphabetContainer.appendChild(letterButton);
 }
+
+// ...
 
 // Función para reiniciar el juego
 function reiniciarJuego() {

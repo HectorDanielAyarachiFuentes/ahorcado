@@ -1,6 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
+    background-image: repeating-linear-gradient(0deg, hsla(66,43%,35%,0.09) 0px, hsla(66,43%,35%,0.09) 1px,transparent 1px, transparent 11px),repeating-linear-gradient(90deg, hsla(66,43%,35%,0.09) 0px, hsla(66,43%,35%,0.09) 1px,transparent 1px, transparent 11px),linear-gradient(90deg, hsl(120,3%,92%),hsl(120,3%,92%));
 }
 
 #word-container {

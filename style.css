@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#word-container {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#guesses-container {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#alphabet-container {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 18px;
+    color: red;
+}
+
+#letter-input {
+    padding: 5px;
+    margin: 10px;
+}
+
+#guess-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para las letras del abecedario */
+.alphabet-letter {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo hover para las letras del abecedario */
+.alphabet-letter:hover {
+    background-color: #007bff;
+    color: white;
+}

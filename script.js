@@ -148,6 +148,7 @@ function reiniciarJuego() {
 
 restartButton.addEventListener("click", reiniciarJuego);
 
+
 // Función para mostrar un mensaje final cuando el jugador gane
 function mostrarMensajeFinal() {
     setTimeout(() => {
@@ -157,6 +158,21 @@ function mostrarMensajeFinal() {
         document.body.appendChild(mensajeFinal);
     }, 1000);
 }
+
+// Función para mostrar un mensaje final cuando el jugador gane
+function mostrarMensajeFinal() {
+    if (!juegoTerminado || palabraOculta === palabraSecreta) {
+        return; // No muestra el mensaje si el juego no ha terminado o si el jugador ha ganado
+    }
+
+    setTimeout(() => {
+        const mensajeFinal = document.createElement("div");
+        mensajeFinal.textContent = "¡Felicidades! Has adivinado la palabra secreta.";
+        mensajeFinal.classList.add("mensaje-final");
+        document.body.appendChild(mensajeFinal);
+    }, 1000);
+}
+
 
 // Inicialización del juego
 actualizarPalabraOculta();

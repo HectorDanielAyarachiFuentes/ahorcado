@@ -143,6 +143,17 @@ function mostrarMensajeFinal() {
     document.body.appendChild(mensajeFinal);
   }, 1000);
 }
-
+//// MUSICA DE BABASONICOS PLAYER
+const audioPlayer = document.getElementById("audio-player");
+function playPause() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    document.getElementById("guess-button").innerHTML = "¡Vive con Babasónicos! 🎶🤘";
+  } else {
+    audioPlayer.pause();
+    document.getElementById("guess-button").innerHTML = "Vive con alegría";
+  }
+}
+document.getElementById("guess-button").addEventListener("click", playPause);
 // Inicialización del juego
 actualizarPalabraOculta();

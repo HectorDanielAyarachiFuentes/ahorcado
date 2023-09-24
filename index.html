@@ -29,25 +29,6 @@
     
     <button id="restart-button" style="display: none;">Reiniciar Juego</button> <!-- Botón de reinicio oculto inicialmente -->
     <script src="script.js"></script>
-    <script>
-        const guessButton = document.getElementById("guess-button");
-        const audioPlayer = document.getElementById("audio-player");
-        let isPlaying = false;
-        function playPause() {
-          // Si la música está reproduciéndose, la pausamos
-          if (isPlaying === true) {
-            audioPlayer.pause();
-            isPlaying = false;
-            guessButton.innerHTML = "Vive con alegría";
-          } else {
-            // Si la música está pausada, la reproducimos
-            audioPlayer.play();
-            isPlaying = true;
-            guessButton.innerHTML = "¡Vive con Babasónicos! 🎶🤘"
-            ;
-          }
-        }
-        guessButton.addEventListener("click", playPause);
-</script>
+    
 </body>
 </html>

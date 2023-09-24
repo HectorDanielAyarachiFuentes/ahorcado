@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-     <link type="image/png" sizes="120x120" rel="icon"
-        href="https://github.com/HectorDanielAyarachiFuentes/TIENDA-RAMONCITO-POKEMONS/blob/main/Fotos/umbrella-corporation-120.png?raw=true">
     <title>Programador Ahorcado
     </title>
 </head>
@@ -26,8 +23,22 @@
     <p id="hint"></p> <!-- Nuevo mensaje de pista -->
     <p id="congratulations"></p> <!-- Nuevo mensaje de felicitación -->
     <button id="guess-button">"Vive con alegría"</button>
-    <audio id="audio-player" src="https://www.cjoint.com/doc/23_09/MIydXOCfv7d_Babasonicos---Irresponsables.mp3"></audio>    <button id="restart-button" style="display: none;">Reiniciar Juego</button> <!-- Botón de reinicio oculto inicialmente -->
-
+    <audio id="audio-player" src="https://www.cjoint.com/doc/23_09/MIydXOCfv7d_Babasonicos---Irresponsables.mp3">Reiniciar Juego</button> <!-- Botón de reinicio oculto inicialmente -->
     <script src="script.js"></script>
+    <script>
+        // Obtener referencias a elementos HTML
+        var audioPlayer = document.getElementById("audio-player");
+        var ramoncito = document.getElementById("ramoncito");
+        // Agregar un controlador de eventos para el clic en el elemento <span>
+        ramoncito.addEventListener("click", function() {
+            // Si el audio está pausado, reproducirlo; de lo contrario, pausarlo
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        });
+    </script>
 </body>
 </html>
+

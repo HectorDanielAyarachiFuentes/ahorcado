@@ -143,14 +143,6 @@ function mostrarMensajeFinal() {
     document.body.appendChild(mensajeFinal);
   }, 1000);
 }
-// Obtén una referencia al elemento de audio
-const audioPlayer = document.getElementById("audio-player");
-// Obtén una referencia al botón "SE FELIZ!!!"
-const happyButton = document.getElementById("guess-button");
-// Agrega un evento de clic al botón
-happyButton.addEventListener("click", () => {
-  // Reproduce el audio
-  audioPlayer.play();
-});
+
 // Inicialización del juego
 actualizarPalabraOculta();

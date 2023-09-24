@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
      <link type="image/png" sizes="120x120" rel="icon"
         href="https://github.com/HectorDanielAyarachiFuentes/TIENDA-RAMONCITO-POKEMONS/blob/main/Fotos/umbrella-corporation-120.png?raw=true">
@@ -26,8 +25,28 @@
     <p id="hint"></p> <!-- Nuevo mensaje de pista -->
     <p id="congratulations"></p> <!-- Nuevo mensaje de felicitación -->
     <button id="guess-button">"Vive con alegría"</button>
-    <audio id="audio-player" src="https://www.cjoint.com/doc/23_09/MIydXOCfv7d_Babasonicos---Irresponsables.mp3"></audio>    <button id="restart-button" style="display: none;">Reiniciar Juego</button> <!-- Botón de reinicio oculto inicialmente -->
-
+    <audio id="audio-player" src="https://www.cjoint.com/doc/23_09/MIydXOCfv7d_Babasonicos---Irresponsables.mp3"></audio>    
+    
+    <button id="restart-button" style="display: none;">Reiniciar Juego</button> <!-- Botón de reinicio oculto inicialmente -->
     <script src="script.js"></script>
+    <script>
+        const guessButton = document.getElementById("guess-button");
+        const audioPlayer = document.getElementById("audio-player");
+        let isPlaying = false;
+        function playPause() {
+          // Si la música está reproduciéndose, la pausamos
+          if (isPlaying === true) {
+            audioPlayer.pause();
+            isPlaying = false;
+            guessButton.innerHTML = "Vive con alegría";
+          } else {
+            // Si la música está pausada, la reproducimos
+            audioPlayer.play();
+            isPlaying = true;
+            guessButton.innerHTML = "Pausar";
+          }
+        }
+        guessButton.addEventListener("click", playPause);
+</script>
 </body>
 </html>

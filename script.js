@@ -7,13 +7,11 @@ const palabrasSecretas = [
   { palabra: "java", pista: "Lenguaje de programación orientado a objetos" },
   // Agrega más palabras y pistas aquí
 ];
-
 // Palabra y pista actual
 let palabraActual = palabrasSecretas[0];
 let letrasAdivinadas = [];
 let intentosRestantes = 6;
 let juegoTerminado = false;
-
 // Elementos del DOM
 const wordContainer = document.getElementById("word-container");
 const guessesContainer = document.getElementById("guesses-container");
@@ -21,14 +19,11 @@ const message = document.getElementById("message");
 const hint = document.getElementById("hint");
 const guessButton = document.getElementById("guess-button");
 const restartButton = document.getElementById("restart-button");
-
 // Inicializar la palabra oculta con guiones bajos
 let palabraOculta = "_".repeat(palabraActual.palabra.length);
 wordContainer.textContent = palabraOculta;
-
 // Mostrar la pista
 hint.textContent = `Pista: ${palabraActual.pista}`;
-
 // Frases de felicitación cuando el jugador gana
 const frasesGanar = [
   "¡Felicitaciones! Eres un genio, ¡ganaste!",
@@ -39,7 +34,6 @@ const frasesGanar = [
   "¡Ganador absoluto! Felicidades.",
   // Agrega más frases de felicitación aquí
 ];
-
 // Frases de ánimo cuando el jugador pierde
 const frasesPerder = [
   "No te preocupes, ¡la próxima vez lo harás mejor!",
@@ -49,7 +43,6 @@ const frasesPerder = [
   "Recuerda, los campeones se levantan después de caer. ¡Sigue adelante!",
   // Agrega más frases de ánimo aquí
 ];
-
 // Función para actualizar la palabra oculta con las letras adivinadas
 function actualizarPalabraOculta() {
   let palabraMostrada = "";
@@ -63,7 +56,6 @@ function actualizarPalabraOculta() {
   palabraOculta = palabraMostrada;
   wordContainer.textContent = palabraOculta;
 }
-
 // Función para manejar los intentos del jugador y verificar la victoria
 function manejarIntento(letra) {
   if (juegoTerminado) {
@@ -111,7 +103,6 @@ function manejarIntento(letra) {
     ", "
   )}`;
 }
-
 // Generar el abecedario
 const abecedario = "abcdefghijklmnopqrstuvwxyz";
 const alphabetContainer = document.getElementById("alphabet-container");
@@ -124,14 +115,12 @@ for (let letra of abecedario) {
   });
   alphabetContainer.appendChild(letterButton);
 }
-
 // Función para reiniciar el juego
 function reiniciarJuego() {
   palabraActual = palabrasSecretas[Math.floor(Math.random() * palabrasSecretas.length)];
   letrasAdivinadas = [];
   intentosRestantes = 6;
   juegoTerminado = false;
-
   // Reinicia los elementos en el DOM
   palabraOculta = "_".repeat(palabraActual.palabra.length);
   wordContainer.textContent = palabraOculta;
@@ -141,9 +130,7 @@ function reiniciarJuego() {
   guessButton.disabled = false;
   restartButton.style.display = "none";
 }
-
 restartButton.addEventListener("click", reiniciarJuego);
-
 // Función para mostrar un mensaje final cuando el jugador gane
 function mostrarMensajeFinal() {
   if (!juegoTerminado || palabraOculta === palabraActual.palabra) {
@@ -156,18 +143,14 @@ function mostrarMensajeFinal() {
     document.body.appendChild(mensajeFinal);
   }, 1000);
 }
-
 // Obtén una referencia al elemento de audio
 const audioPlayer = document.getElementById("audio-player");
-
 // Obtén una referencia al botón "SE FELIZ!!!"
 const happyButton = document.getElementById("guess-button");
-
 // Agrega un evento de clic al botón
 happyButton.addEventListener("click", () => {
   // Reproduce el audio
   audioPlayer.play();
 });
-
 // Inicialización del juego
 actualizarPalabraOculta();

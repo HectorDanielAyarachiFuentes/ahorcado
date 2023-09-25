@@ -5,8 +5,24 @@ const palabrasSecretas = [
   { palabra: "html", pista: "Lenguaje de marcado para páginas web" },
   { palabra: "css", pista: "Lenguaje de estilos para páginas web" },
   { palabra: "java", pista: "Lenguaje de programación orientado a objetos" },
+  { palabra: "php", pista: "Lenguaje de programación para desarrollo web" },
+  { palabra: "ruby", pista: "Lenguaje de programación interpretado" },
+  { palabra: "csharp", pista: "Lenguaje de programación de Microsoft" },
+  { palabra: "swift", pista: "Lenguaje de programación para aplicaciones iOS" },
+  { palabra: "android", pista: "Sistema operativo móvil de Google" },
+  { palabra: "mysql", pista: "Sistema de gestión de bases de datos relacional" },
+  { palabra: "mongodb", pista: "Base de datos NoSQL orientada a documentos" },
+  { palabra: "react", pista: "Biblioteca de JavaScript para construir interfaces de usuario" },
+  { palabra: "angular", pista: "Framework de JavaScript para desarrollo web" },
+  { palabra: "typescript", pista: "Lenguaje de programación basado en JavaScript" },
+  { palabra: "docker", pista: "Plataforma de contenedorización" },
+  { palabra: "linux", pista: "Sistema operativo de código abierto" },
+  { palabra: "git", pista: "Sistema de control de versiones" },
+  { palabra: "api", pista: "Interfaz de programación de aplicaciones" },
+  { palabra: "nodejs", pista: "Entorno de ejecución de JavaScript del lado del servidor" },
   // Agrega más palabras y pistas aquí
 ];
+
 // Palabra y pista actual
 let palabraActual = palabrasSecretas[0];
 let letrasAdivinadas = [];
@@ -32,6 +48,20 @@ const frasesGanar = [
   "Excelente trabajo, ¡ganaste!",
   "¡Eres un adivino experto! Ganaste el juego.",
   "¡Ganador absoluto! Felicidades.",
+  "¡Eres un verdadero campeón! Ganaste.",
+  "¡Triunfaste brillantemente! Eres el ganador.",
+  "¡Enhorabuena! Eres el vencedor indiscutible.",
+  "¡Bravo! Has demostrado tu destreza ganadora.",
+  "¡Victoria total! Eres un crack en esto.",
+  "¡Ganaste con estilo! Felicidades.",
+  "¡Eres el rey del ahorcado! Ganaste.",
+  "¡Increíble! Has conquistado el juego.",
+  "¡Dominaste el ahorcado! Eres el ganador.",
+  "¡Triunfaste con honor! Ganaste el juego.",
+  "¡Eres un ganador nato! Felicidades.",
+  "¡Victoria merecida! Eres un campeón.",
+  "¡Ganar es tu segundo nombre! Felicidades.",
+  "¡Eres un experto en esto! Ganaste.",
   // Agrega más frases de felicitación aquí
 ];
 // Frases de ánimo cuando el jugador pierde
@@ -41,6 +71,21 @@ const frasesPerder = [
   "No hay derrotas, solo lecciones. ¡Sigue adelante!",
   "La perseverancia es la clave del éxito. ¡No te rindas!",
   "Recuerda, los campeones se levantan después de caer. ¡Sigue adelante!",
+  "Tus habilidades mejorarán con cada intento. ¡Sigue practicando!",
+  "¡La victoria es dulce, pero la derrota te hace más fuerte!",
+  "¡La próxima vez lo conseguirás! Mantén la determinación.",
+  "Cada intento te acerca más a la victoria. ¡No te desanimes!",
+  "El fracaso es solo un paso en el camino hacia el éxito. ¡Sigue adelante!",
+  "Tus esfuerzos no se desperdician. ¡Sigue intentando!",
+  "La persistencia es la madre del éxito. ¡No pares!",
+  "Cada derrota te acerca un paso más a la victoria final. ¡Sigue luchando!",
+  "Tienes el potencial para lograr grandes cosas. ¡Sigue esforzándote!",
+  "No importa cuántas veces caigas, lo importante es levantarse. ¡Sigue adelante!",
+  "Tu determinación es admirable. ¡No te rindas ahora!",
+  "¡El ahorcado no tiene oportunidad contra tu determinación!",
+  "Las derrotas temporales no definen tu futuro. ¡Sigue perseverando!",
+  "Tus esfuerzos te llevarán a la victoria. ¡Sigue intentando!",
+  "La paciencia y la práctica te llevarán al éxito. ¡Sigue adelante!",
   // Agrega más frases de ánimo aquí
 ];
 // Función para actualizar la palabra oculta con las letras adivinadas

@@ -22,7 +22,6 @@ const palabrasSecretas = [
   { palabra: "nodejs", pista: "Entorno de ejecución de JavaScript del lado del servidor" },
   // Agrega más palabras y pistas aquí
 ];
-
 // Palabra y pista actual
 let palabraActual = palabrasSecretas[0];
 let letrasAdivinadas = [];

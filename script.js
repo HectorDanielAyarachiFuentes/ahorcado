@@ -201,3 +201,53 @@ function playPause() {
 document.getElementById("guess-button").addEventListener("click", playPause);
 // Inicialización del juego
 actualizarPalabraOculta();
+
+
+//Efecto cascada
+
+var count = 200;
+var defaults = {
+  origin: { y: 0.7 }
+};
+
+function fire(particleRatio, opts) {
+  confetti(Object.assign({}, defaults, opts, {
+    particleCount: Math.floor(count * particleRatio)
+  }));
+}
+
+// Función para generar una dirección de viento aleatoria
+function randomWindDirection() {
+  return Math.random() > 0.5 ? -1 : 1;
+}
+
+// Función para iniciar el efecto de cascada
+function startConfetiCascada() {
+  var cascadeCount = 5; // Número de cascadas
+  var cascadeDuration = 1000; // Duración de cada cascada en milisegundos
+
+  function launchCascade(index) {
+    setTimeout(function() {
+      var windDirection = index % 2 === 0 ? 1 : -1; // Cambiar dirección del viento en cada cascada
+      fire(1, {
+        spread: Math.random() * 100 + 26,
+        startVelocity: Math.random() * 100 + 25,
+        decay: Math.random() * 0.2 + 0.7,
+        scalar: Math.random() + 0.5,
+        gravity: Math.random() * 0.5 + 0.2, // Gravedad aleatoria
+        wind: windDirection * Math.random() * 10 // Dirección y velocidad del viento aleatoria
+      });
+
+      if (index < cascadeCount - 1) {
+        launchCascade(index + 1); // Iniciar la siguiente cascada
+      }
+    }, cascadeDuration);
+  }
+
+  // Iniciar la primera cascada
+  launchCascade(0);
+}
+
+// Agregar un controlador de clic al botón
+document.getElementById('guess-button').addEventListener('click', startConfetiCascada);
+

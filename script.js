@@ -123,6 +123,9 @@ function manejarIntento(letra) {
       guessButton.disabled = true;
       restartButton.style.display = "block";
       mostrarMensajeFinal();
+      if (juegoTerminado) {
+        startConfetiCascada();
+      }
     } else {
       message.textContent = "¡Correcto! Has adivinado una letra.";
     }
@@ -147,6 +150,7 @@ function manejarIntento(letra) {
     ", "
   )}`;
 }
+
 // Generar el abecedario
 const abecedario = "abcdefghijklmnopqrstuvwxyz";
 const alphabetContainer = document.getElementById("alphabet-container");

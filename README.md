@@ -6,6 +6,8 @@ Bienvenido al juego del Ahorcado, donde la diversión y el desafío se combinan.
 
 En la imagen de arriba, puedes ver una visión general del juego. ¡Prepárate para adivinar la palabra oculta!
 
+![Visión General del Juego](https://github.com/HectorDanielAyarachiFuentes/ahorcado/blob/main/Imagenes%20del%20Readme/gif%20juego%20ahorcado.gif?raw=true)
+
 ## ¡Has Ganado!
 
 ![Mensaje de Victoria](https://github.com/HectorDanielAyarachiFuentes/ahorcado/blob/main/Imagenes%20del%20Readme/Opera%20Instant%C3%A1nea_2023-09-30_083039_hectordanielayarachifuentes.github.io.png?raw=true)
